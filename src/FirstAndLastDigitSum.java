@@ -5,20 +5,13 @@ public class FirstAndLastDigitSum {
             return -1;
         }
 
-        int sum;
         int lastDigit = number % 10;
-        int reversed = 0;
+        int firstDigit = number;
 
-        while(number > 0){
-            reversed = (reversed * 10) + (number % 10);
-            number /= 10;
+        while(firstDigit >= 10){
+            firstDigit /= 10;
         }
 
-        int firstDigit = reversed%10;
-
-        sum = lastDigit + firstDigit;
-
-
-        return sum;
+        return firstDigit + lastDigit;
     }
 }
